@@ -177,6 +177,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 
 
+
 X_train, X_test, y_train, y_test= train_test_split(X, y, stratify = y, test_size = 0.2, random_state = 189)
 
 # <h4> 6) Instantiate a logistic regression model and set class_weight to balanced. Fit the model with the training data.</h4>
@@ -268,10 +269,10 @@ ynew = lr.predict_proba(newdata.iloc[:, :6].values)
 if submit:
 	ans=lr.predict(newdata.iloc[:, :6].values)
 	if ans==[1]:
-		st.write('The probability that you will use Linkedin is:',ynew[0,1])
+		st.write('The probability that you will use Linkedin is:',round(ynew[0,1],2))
 		st.title("You are a Linkedin user")
 	else:
-		st.write('The probability that you will use Linkedin is:',ynew[0,1])
+		st.write('The probability that you will use Linkedin is:',round(ynew[0,1],2))
 		st.title("You are not a Linkedin user")
 	
     
