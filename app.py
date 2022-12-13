@@ -265,12 +265,14 @@ with st.form("key1"):
     # ask for input
     submit= st.form_submit_button("Click to find LinkedIn Prediction ")
 newdata["prediction"]=lr.predict(newdata.iloc[:, :6].values)
-
+ynew = lr.predict_proba(newdata.iloc[:, :6].values)
 if submit:
 	ans=lr.predict(newdata.iloc[:, :6].values)
 	if ans==[1]:
+		st.write('The probability that you will use Linkedin is:',ynew[0,1])
 		st.title("You are a Linkedin user")
 	else:
+		st.write('The probability that you will use Linkedin is:',ynew[0,1])
 		st.title("You are not a Linkedin user")
 	
     
