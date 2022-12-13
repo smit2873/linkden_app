@@ -175,7 +175,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
-import statsmodels.api as sm
 
 
 X_train, X_test, y_train, y_test= train_test_split(X, y, stratify = y, test_size = 0.2, random_state = 189)
